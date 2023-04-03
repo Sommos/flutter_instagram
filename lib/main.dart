@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 import '../pages/profile_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,11 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Sizer(builder: (context, orientation, deviceType) {
-      return const MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: ProfilePage(),
-      );
-    },);
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: ProfilePage(),
+    );
   }
 }
