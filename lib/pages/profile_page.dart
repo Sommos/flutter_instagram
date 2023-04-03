@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 import '../tabs/feed_view.dart';
 import '../tabs/reels_view.dart';
@@ -62,13 +63,13 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                   // profile picture
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 8.0, 
-                      vertical: 12.0,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 8.0.w, 
+                      vertical: 12.0.h,
                     ),
                     child: Container(
-                      height: 120,
-                      width: 120,
+                      height: 120.h,
+                      width: 120.w,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle, 
                         color: Colors.cyan[400],
