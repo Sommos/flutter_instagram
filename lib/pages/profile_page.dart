@@ -16,17 +16,17 @@ class _ProfilePageState extends State<ProfilePage> {
     // feed
     Tab(icon: Icon(
       Icons.image,
-      color: Colors.cyan,
+      color: Colors.grey,
     ),),
     // reels
     Tab(icon: Icon(
       Icons.video_collection,
-      color: Colors.cyan,
+      color: Colors.grey,
     ),),
     // tagged
     Tab(icon: Icon(
       Icons.bookmark,
-      color: Colors.cyan,
+      color: Colors.grey,
     ),),
   ];
 
@@ -45,202 +45,203 @@ class _ProfilePageState extends State<ProfilePage> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        body: SafeArea(
-          child: Column(
-            children: [
+        body: ListView(
+          children: [
 
-              const SizedBox(
-                height: 10.0
-              ),
+            const SizedBox(
+              height: 10.0
+            ),
 
-              // profile
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // following
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: const [
-                      Text(
-                        "364",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold, 
-                          fontSize: 16,
-                        ),
-                      ),
-
-                      SizedBox(
-                        height: 5.0
-                      ),
-
-                      Text(
-                        "Following",
-                        style: TextStyle(
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  // profile picture
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 20.0, 
-                    ),
-                    child: Container(
-                      height: 120,
-                      width: 120,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle, 
-                        color: Colors.cyan[400],
+            // profile
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // following
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: const [
+                    Text(
+                      "101",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold, 
+                        fontSize: 16,
                       ),
                     ),
-                  ),
 
-                  // followers
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "30.4k",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold, 
-                          fontSize: 16,
-                        ),
-                      ),
-
-                      SizedBox(
-                        height: 5.0
-                      ),
-
-                      Text(
-                        "Followers",
-                        style: TextStyle(
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-
-              const SizedBox(
-                height: 20.0
-              ),
-
-              // name 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const[
-                  Text(
-                    "Sommos",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                    SizedBox(
+                      height: 5.0
                     ),
-                  ),
-                  Text(
-                    " | ",
-                  ),
-                  Text(
-                    "Developer",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ]
-              ),
 
-              const SizedBox(
-                height: 20.0
-              ),
-
-              // bio
-              Text(
-                "UI Designer • Programmer • Cheffing",
-                style: TextStyle(
-                  color: Colors.grey[600],
-                ),
-              ),
-
-              const SizedBox(
-                height: 5.0
-              ),
-              
-              // link
-              Text(
-                "github.com/Sommos",
-                style: TextStyle(
-                  color: Colors.blue[500],
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
-              const SizedBox(
-                height: 20.0
-              ),
-
-              // buttons
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Row(
-                  children: [
-              
-                    // edit profile
-                    Expanded(
-                      child: Container(
-                        padding: EdgeInsets.all(20.0),
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Edit Profile"
-                          ),
-                        ),
+                    Text(
+                      "Following",
+                      style: TextStyle(
+                        color: Colors.grey,
                       ),
                     ),
-              
-                    const SizedBox(
-                      width: 10.0
-                    ),
-              
-                    // contact
-                    Expanded(
-                      child: Container(
-                        padding: EdgeInsets.all(20.0),
-                        decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Contact",
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
                   ],
                 ),
-              ),
 
-
-              // tab bar
-              TabBar(
-                tabs: tabs,
-              ),
-              
-              // tab bar view
-              Expanded(
-                child: TabBarView(
-                  children: tabBarViews,
+                // profile picture
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20.0, 
+                  ),
+                  child: ClipOval(
+                    child: SizedBox.fromSize(
+                      size: const Size.fromRadius(48.0),
+                      child: Image.asset("lib/images/pfp.png", fit: BoxFit.cover),
+                    ),
+                  ),
                 ),
+
+                // followers
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Text(
+                      "1.7m",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold, 
+                        fontSize: 16,
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: 5.0
+                    ),
+
+                    Text(
+                      "Followers",
+                      style: TextStyle(
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+
+            const SizedBox(
+              height: 20.0
+            ),
+
+            // name 
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const[
+                Text(
+                  "Sommos",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  " | ",
+                ),
+                Text(
+                  "Developer",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ]
+            ),
+
+            const SizedBox(
+              height: 20.0
+            ),
+
+            // bio
+            Text(
+              "UI Designer • Programmer • Cheffing",
+              style: TextStyle(
+                color: Colors.grey[600],
               ),
-            ],
-          ),
+              textAlign: TextAlign.center,
+            ),
+
+            const SizedBox(
+              height: 5.0
+            ),
+            
+            // link
+            Text(
+              "github.com/Sommos",
+              style: TextStyle(
+                color: Colors.blue[500],
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center
+            ),
+
+            const SizedBox(
+              height: 20.0
+            ),
+
+            // buttons
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                children: [
+            
+                  // edit profile
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.all(20.0),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[300],
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          "Edit Profile"
+                        ),
+                      ),
+                    ),
+                  ),
+            
+                  const SizedBox(
+                    width: 10.0
+                  ),
+            
+                  // contact
+                  Expanded(
+                    child: Container(
+                      padding: const EdgeInsets.all(20.0),
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          "Contact",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 20.0),
+            // tab bar
+            TabBar(
+              tabs: tabs,
+            ),
+            
+            const SizedBox(height: 2.0,),
+
+            // tab bar view
+            SizedBox(
+              height: 1400,
+              child: TabBarView(
+                children: tabBarViews,
+              ),
+            ),
+          ],
         ),
       ),
     );

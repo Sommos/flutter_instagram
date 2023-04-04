@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.seventh_app">
    <application
-        android:label="seventh_app"
+        android:label="Instagram"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
